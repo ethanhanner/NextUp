@@ -1,20 +1,16 @@
-<nav class="navbar navbar-expand-lg">
-    <div class="container">
-        <a class="navbar-brand" href="#">
-        <img src="/nextup-logo.png" alt="NextUp" width="50">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarMenu">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Backlog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Reviews</a>
-                </li>
-            </ul>
-        </div>
+<div class="header-top">
+    <div class="header-logo">
+        <img src="/nextup-logo.png" alt="NextUp" class="header-logo-img" />
+        <span class="header-title">extUp</span>
     </div>
-</nav>
+    <div class="header-nav">
+        <nav class="nav-menu">
+            @for(item of _items; track item.title) {
+                <button class="nav-menu-btn" [routerLink]="item.url" routerLinkActive="active">
+                    <ng-icon [name]="item.icon" />
+                    <span class="nav-menu-btn-title">{{ item.title }}</span>
+                </button>
+            }
+        </nav>
+    </div>
+</div>

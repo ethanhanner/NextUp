@@ -1,0 +1,8 @@
+<nav class="mobile-navbar">
+    @for(item of _items; track item.title) {
+        <button type="button" class="mobile-navbar-btn" [routerLink]="item.url" routerLinkActive="active">
+            <ng-icon [name]="item.icon" />
+            <span class="mobile-navbar-btn-title">{{ item.title }}</span>
+        </button>
+    }
+</nav>
